@@ -16,7 +16,7 @@ jobs:
           path: ~/.npm
           key: '${{ runner.os }}-${{ hashFiles(''TODO'') }}'
       - uses: actions/checkout@v2
-      - uses: jihangli10/test-action@v1.0.6
+      - uses: jihangli10/test-action@v1.0.7
         with:
           soteria-token: ${{ secrets.TOKEN }}
       - run: |
