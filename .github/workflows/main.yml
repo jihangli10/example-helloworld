@@ -17,8 +17,11 @@ jobs:
           key: '${{ runner.os }}-${{ hashFiles(''TODO'') }}'
       - uses: actions/checkout@v2
       - uses: jihangli10/test-action@v1.0.15
+        id: soteria
         with:
           soteria-token: ${{ secrets.TOKEN }}
+      - name: Get the output report
+        run: echo "${{ steps.soteria.outputs.reports }}"
       - run: |
           rustup install stable
           cargo --version
