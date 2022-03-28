@@ -16,6 +16,9 @@ jobs:
           path: ~/.npm
           key: '${{ runner.os }}-${{ hashFiles(''TODO'') }}'
       - uses: actions/checkout@v2
+      - uses: lijihang10/test-action@v1
+        with:
+          soteria-token: ${{ secrets.GITHUB_TOKEN }}
       - run: |
           rustup install stable
           cargo --version
